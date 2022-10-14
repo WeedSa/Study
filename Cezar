@@ -1,0 +1,46 @@
+direction = input('Выберете направление — шифрофаниие или дешифрование (1/2): ')
+step = int(input('Введите шаг сдвига (со сдвигом вправо): '))
+phrase = input('Введите фразу: ')
+
+en_alphabet = [chr(i) for i in range(65, 91)] + [chr(j) for j in range(97, 123)]
+ru_alphabet = [chr(i) for i in range(1040, 1104)]
+
+
+def encryption():
+    if phrase[0] in en_alphabet:
+        alphabet = en_alphabet
+        len_a = 26
+    else:
+        alphabet = ru_alphabet
+        len_a = 32
+    for k in range(len(phrase)):
+        if phrase[k].isalpha():
+            if phrase[k].isupper():
+                print(alphabet[(alphabet.index(phrase[k]) + step) % len_a], end='')
+            else:
+                print(alphabet[(alphabet.index(phrase[k]) + step) % len_a + len_a], end='')
+        else:
+            print(phrase[k], end='')
+
+
+def decryption():
+    if phrase[0] in en_alphabet:
+        alphabet = en_alphabet
+        len_a = 26
+    else:
+        alphabet = ru_alphabet
+        len_a = 32
+    for k in range(len(phrase)):
+        if phrase[k].isalpha():
+            if phrase[k].isupper():
+                print(alphabet[(alphabet.index(phrase[k]) + step) % len_a], end='')
+            else:
+                print(alphabet[(alphabet.index(phrase[k]) + step) % len_a + len_a], end='')
+        else:
+            print(phrase[k], end='')
+          
+            
+if direction == '1':
+    encryption()
+elif direction == '2':
+    decryption()

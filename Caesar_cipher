@@ -33,9 +33,9 @@ def decryption():
     for k in range(len(phrase)):
         if phrase[k].isalpha():
             if phrase[k].isupper():
-                print(alphabet[(alphabet.index(phrase[k]) + step) % len_a], end='')
+                print(alphabet[(alphabet.index(phrase[k]) - step) % len_a], end='')
             else:
-                print(alphabet[(alphabet.index(phrase[k]) + step) % len_a + len_a], end='')
+                print(alphabet[(alphabet.index(phrase[k]) - step) % len_a + len_a], end='')
         else:
             print(phrase[k], end='')
           

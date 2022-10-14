@@ -1,0 +1,28 @@
+import random
+
+num = random.randint(1, 100)
+print('Задумано число от 1 до 100. Ваша задача его угадать.')
+num1 = input('Пожалуйста, введите число: ')
+
+
+def isvalid(n):
+    if n.isdigit():
+        return True
+    else:
+        return False
+
+
+while isvalid(num1) is not True:
+    print('Это не число.')
+    num1 = input('Пожалуйста, введите число: ')
+
+while int(num1) != num:
+    if int(num1) < num:
+        print('Слишком мало, попробуйте еще раз.')
+        num1 = int(input('Пожалуйста, введите число: '))
+        continue
+    elif int(num1) > num:
+        print('Слишком много, попробуйте еще раз.')
+        num1 = int(input('Пожалуйста, введите число: '))
+        continue
+print('Поздравляю, число угадано!')

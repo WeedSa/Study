@@ -12,3 +12,6 @@ This is my study programmes.
 
 **Caesar_cipher program description:**
 - Perform encryption and decryption with a step set by the user according to the operation of the Caesar cipher.
+
+**Note description:**
+- The materials accumulated during the study are stored here. 
